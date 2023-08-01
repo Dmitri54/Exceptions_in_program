@@ -4,7 +4,16 @@ import java.io.File;
 
 public class Application { // Возвращает информацию о размере файла на моём ПК.
     public static void main(String[] args) {
-        System.out.println(getFileSize(new File("123")));
+        // System.out.println(getFileSize(new File("123")));
+
+        System.out.println(divide(10, 0));
+    }
+
+    public static int divide(int a1, int a2){ // Пример обработки ошибок:
+        if (a2 == 0){ // Обработка ошибок
+            return -1; // Код ошибки ставлю сам!
+        }
+        return a1/a2;
     }
 
     public static long getFileSize(File file){ // Метод возвращает информацию о размере файла на моём ПК
