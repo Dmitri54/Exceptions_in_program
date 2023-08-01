@@ -27,27 +27,43 @@ import java.io.File;
 // -------------------------------------------------------------------------------------
 // Пример: возму массив чисел с размером 10.
 
+// public class Application { 
+//     public static void main(String[] args) {
+//         // int[] ints = new int[10]; // Создал массив 
+//         // System.out.println(ints[1000]); // Обращаюсь к объекту с индексом 1000
+//         // Вижу ошибку java.lang.ArrayIndexOutOfBoundsException: Index 1000 out of bounds for length 10 - вышел за границу массива.
+
+//         // a();
+//         c();
+//     }
+
+//     public static void a(){
+//         b();
+//     }
+
+//     public static void b(){
+//         c(); // Вызываю метод 
+//     }
+
+//     public static void c(){
+//         int[] ints = new int[10];
+//         System.out.println(ints[1000]); // вижу всю цепочку вызовов и поля в которых допущенна ошибка.
+//     }
+// }
+
+// ---------------------------------------------------------------------------------------
+// Пример: обработка ошибки деление на ноль.
+
 public class Application { 
     public static void main(String[] args) {
-        // int[] ints = new int[10]; // Создал массив 
-        // System.out.println(ints[1000]); // Обращаюсь к объекту с индексом 1000
-        // Вижу ошибку java.lang.ArrayIndexOutOfBoundsException: Index 1000 out of bounds for length 10 - вышел за границу массива.
-
-        a();
+        System.out.println(divide( 10, 0));  
+        // Вижу ошибку java.lang.RuntimeException: Divide by zero not permited
     }
 
-    public static void a(){
-        b();
+    public static int divide(int a1, int a2){
+        if (a2 == 0){
+            throw new RuntimeException("Divide by zero not permited");
+        }
+        return a1/a2;
     }
-
-    public static void b(){
-        c(); // Вызываю метод 
-    }
-
-    public static void c(){
-        int[] ints = new int[10];
-        System.out.println(ints[1000]); // вижу всю цепочку вызовов и поля в которых допущенна ошибка.
-    }
-
-    
 }
