@@ -7,7 +7,7 @@ public class ExDemo {
         for (int i = 0; i < num.length; i++) {
             try{
                 System.out.println(num[i] + " / " + num2[i] + " = " + num[i]/num2[i]);
-            } catch (Throwable throwable){
+            } catch (Exception exception){
                 System.out.println("Попытка деления на ноль или выход за границы массива");
             } // catch (ArrayIndexOutOfBoundsException exception){
             //     System.out.println("Элемент не найден");
@@ -15,7 +15,10 @@ public class ExDemo {
         }
     }
 }
-// Throwable - super class, поэтому ловятся все исключения.  
+// Throwable - super class, поэтому ловятся все исключения. 
+
+// Exception - является под классом Throwable. 
+// Обрабатывает исключения связанные только с програмными ошибками.
 
 // 4 / 2 = 2
 // Попытка деления на ноль или выход за границы массива
