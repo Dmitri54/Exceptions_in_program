@@ -7,7 +7,7 @@ public class ExDemo {
         for (int i = 0; i < num.length; i++) {
             try{
                 System.out.println(num[i] + " / " + num2[i] + " = " + num[i]/num2[i]);
-            } catch (Exception exception){
+            } catch (Error exception){
                 System.out.println("Попытка деления на ноль или выход за границы массива");
             } // catch (ArrayIndexOutOfBoundsException exception){
             //     System.out.println("Элемент не найден");
@@ -20,11 +20,8 @@ public class ExDemo {
 // Exception - является под классом Throwable. 
 // Обрабатывает исключения связанные только с програмными ошибками.
 
+// Error - Это ошибки которые возникают внешней среды
+
 // 4 / 2 = 2
-// Попытка деления на ноль или выход за границы массива
-// 16 / 4 = 4
-// 32 / 4 = 8
-// Попытка деления на ноль или выход за границы массива
-// 128 / 8 = 16
-// Попытка деления на ноль или выход за границы массива
-// Попытка деления на ноль или выход за границы массива
+// Exception in thread "main" java.lang.ArithmeticException: / by zero
+//         at sem_01.ExDemo.main(ExDemo.java:9)
