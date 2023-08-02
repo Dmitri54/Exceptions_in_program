@@ -7,21 +7,22 @@ public class ExDemo {
         for (int i = 0; i < num.length; i++) {
             try{
                 System.out.println(num[i] + " / " + num2[i] + " = " + num[i]/num2[i]);
-            } catch (ArithmeticException exception){
-                System.out.println("Попытка деления на ноль");
-            } catch (ArrayIndexOutOfBoundsException exception){
-                System.out.println("Элемент не найден");
-            }
+            } catch (ArithmeticException | ArrayIndexOutOfBoundsException exception ){
+                System.out.println("Попытка деления на ноль или выход за границы массива");
+            } // catch (ArrayIndexOutOfBoundsException exception){
+            //     System.out.println("Элемент не найден");
+            // }
         }
     }
 }
-// Добавил второй catch - выводит второе собщение об выходе за границы массива.
+// ArithmeticException | ArrayIndexOutOfBoundsException exception 
+// Будет отлавливать и арифметические ошибки И ошибку выход за границы массива. 
 
 // 4 / 2 = 2
-// Попытка деления на ноль
+// Попытка деления на ноль или выход за границы массива
 // 16 / 4 = 4
 // 32 / 4 = 8
-// Попытка деления на ноль
+// Попытка деления на ноль или выход за границы массива
 // 128 / 8 = 16
-// Элемент не найден
-// Элемент не найден
+// Попытка деления на ноль или выход за границы массива
+// Попытка деления на ноль или выход за границы массива
