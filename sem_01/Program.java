@@ -17,7 +17,7 @@ public class Program {
             System.out.println("До генерации исключения");
             numbs[7] = 10; // Вызываю ошибку - пытаю записать в элемент под индексом 7 значение 10
             System.out.println("После генерации исключения"); // Вижу, что не вывелось сообщение, т.к. была ошибка
-        } catch (ArrayIndexOutOfBoundsException exception) { // Поэтому срабатывает блок catch 
+        } catch (ArithmeticException exception) { // Заменил обработчик, вижу ошибку. 
             System.out.println("Выход за границы массива");
         }
         System.out.println("После оператора catch");
