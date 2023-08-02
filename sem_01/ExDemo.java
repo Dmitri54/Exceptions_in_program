@@ -16,12 +16,17 @@ public class ExDemo {
         } catch (ArrayIndexOutOfBoundsException exception){
             System.out.println("Элемент не найден");
             System.out.println("Фатальная ошибка");
+
+            System.out.println(exception.getMessage());
+            exception.printStackTrace();
+            System.out.println(exception.toString());
         } // При попадании ошибки сюда, прекращает работу программы.
     }
 }
 
 
-// Чтобы сделать разный приоритет обработки ошибок.
+// ArrayIndexOutOfBoundsException exception
+// exception - это аргумент, ссылка и через неё можно обращаться к встроенным методам.
 
 
 // 4 / 2 = 2
@@ -32,3 +37,7 @@ public class ExDemo {
 // 128 / 8 = 16
 // Элемент не найден
 // Фатальная ошибка
+// Index 6 out of bounds for length 6                                           - exception.getMessage()
+// java.lang.ArrayIndexOutOfBoundsException: Index 6 out of bounds for length 6
+//         at sem_01.ExDemo.main(ExDemo.java:11)                                - exception.printStackTrace()
+// java.lang.ArrayIndexOutOfBoundsException: Index 6 out of bounds for length 6 - exception.toString()
