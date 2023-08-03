@@ -21,16 +21,6 @@ package hw_01;
 import java.util.Arrays;
 
 class Answer {
-    // public int[] subArrays(int[] a, int[] b) {
-    //     a = new int[]{4, 5, 6};
-    //     b = new int[]{1, 2, 3};
-    //     int[] c = new int[a.length];
-    //     for (int i = 0; i < a.length; i++) {
-    //         c[i] = a[i] - b[i];
-    //     }
-    //     return c;
-    // }
-
     public int[] subArrays(int[] a, int[] b) {
         a = new int[]{4, 5, 6};
         b = new int[]{1, 2, 3};
