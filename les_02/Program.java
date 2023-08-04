@@ -58,10 +58,12 @@ public class Program {
 
         try {
             FileReader test = new FileReader("test");
-        } catch (RuntimeException e) { // или FileNotFoundException не работает. С Exception - работает.
-            throw new RuntimeException(e);
-            
+        } catch (RuntimeException | FileNotFoundException e) { // Через логическую связку и (|) можно обработать несколько исключений.
+            throw new RuntimeException(e);  
         }
+
+
+
 
     }
 }
