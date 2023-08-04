@@ -6,6 +6,7 @@ package les_02;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
@@ -56,10 +57,22 @@ public class Program {
 // Checked не дадут скомпилировать код, если обработка этой ошибки не была произведена.
         // FileReader test = new FileReader("test"); // VSC не даст скомпилировать этот код, т.к. ошибка FileNotFoundException  
 
+        FileReader test = null;
         try {
-            FileReader test = new FileReader("test");
-        } catch (RuntimeException | FileNotFoundException e) { // Через логическую связку и (|) можно обработать несколько исключений.
-            throw new RuntimeException(e);  
+            test = new FileReader("test");
+            test.read();
+        } catch (RuntimeException | IOException e) { // Через логическую связку и (|) можно обработать несколько исключений. 
+            System.out.println("catch exceprion: " + e.getClass().getSimpleName()); 
+        } finally { // Блок будет выполнен обязательно
+            System.out.println("finally start");
+            if (test != null){
+                try {
+                    test.close();
+                } catch (IOException e) {
+                    System.out.println("exception while close");
+                }
+            }
+            System.out.println("finally finished");
         }
 
 
