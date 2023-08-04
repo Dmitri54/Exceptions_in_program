@@ -37,11 +37,14 @@ public class Program {
             // number = 10 / 1; // Так работает.
             
             String test = null;
-            System.out.println(test.length()); // получу исключение - NullPointerException
+            // System.out.println(test.length()); // получу исключение - NullPointerException
+            Collections.emptyList().add(new Object());
         } catch (ArithmeticException e) { // Заменил и приложение перестало падать с ошибкой.
             System.out.println("На ноль делить нельзя (operation divide by zero not supported)");
         } catch (NullPointerException e) {
             System.out.println("nullpointer exeption");
+        } catch (Exception e) {
+            System.out.println("exception");
         }
         System.out.println(number);
 
