@@ -38,8 +38,10 @@ public class Program {
             
             String test = null;
             System.out.println(test.length()); // получу исключение - NullPointerException
-        } catch (Exception e) { // Заменил и приложение перестало падать с ошибкой.
+        } catch (ArithmeticException e) { // Заменил и приложение перестало падать с ошибкой.
             System.out.println("На ноль делить нельзя (operation divide by zero not supported)");
+        } catch (NullPointerException e) {
+            System.out.println("nullpointer exeption");
         }
         System.out.println(number);
 
