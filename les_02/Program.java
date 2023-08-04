@@ -54,8 +54,14 @@ public class Program {
 // Unchecked - не обязательные исключения. Не проверяемые.
 
 // Checked не дадут скомпилировать код, если обработка этой ошибки не была произведена.
-        FileReader test = new FileReader("test"); // VSC не даст скомпилировать этот код, т.к. ошибка FileNotFoundException  
+        // FileReader test = new FileReader("test"); // VSC не даст скомпилировать этот код, т.к. ошибка FileNotFoundException  
 
+        try {
+            FileReader test = new FileReader("test");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+            
+        }
 
     }
 }
