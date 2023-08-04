@@ -58,7 +58,7 @@ public class Program {
 
         try {
             FileReader test = new FileReader("test");
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
             
         }
