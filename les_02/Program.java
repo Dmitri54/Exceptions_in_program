@@ -5,6 +5,8 @@
 package les_02;
 
 import java.io.File;
+import java.util.Collections;
+import java.util.List;
 
 public class Program {
     public static void main(String[] args) {
@@ -19,10 +21,13 @@ public class Program {
         // System.out.println(file);
 
 // 3) NumberFormatException
-        String number = "123fg";
-        int result = Integer.parseInt(number);
-        System.out.println(result);
+        // String number = "123fg";
+        // int result = Integer.parseInt(number);
+        // System.out.println(result);
 
+// 4) UnsupportedOperationException
+        List<Object> emptyList = Collections.emptyList();
+        emptyList.add(new Object()); // метод .add не доступен для emptyList
 
     }
 }
