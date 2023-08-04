@@ -31,11 +31,13 @@ public class Program {
 
 // ==============================================================================
 // try - catch
+        int number = 1;
         try {
-            int number = 10 / 0;            
+            number = 10 / 0;            
         } catch (ArithmeticException e) {
             System.out.println("На ноль делить нельзя (operation divide by zero not supported)");
         }
+        System.out.println(number);
 
     }
 }
