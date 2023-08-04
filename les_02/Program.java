@@ -59,8 +59,9 @@ public class Program {
 
         FileReader test = null;
         try {
-            test = new FileReader("test");
-            test.read();
+            // test = new FileReader("test");
+            test = new FileReader("/Users/User/Desktop/Exceptions_in_program/les_02/test");
+            // test.read();
         } catch (RuntimeException | IOException e) { // Через логическую связку и (|) можно обработать несколько исключений. 
             System.out.println("catch exceprion: " + e.getClass().getSimpleName()); 
         } finally { // Блок будет выполнен обязательно
