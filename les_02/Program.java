@@ -26,8 +26,16 @@ public class Program {
         // System.out.println(result);
 
 // 4) UnsupportedOperationException
-        List<Object> emptyList = Collections.emptyList();
-        emptyList.add(new Object()); // метод .add не доступен для emptyList
+        // List<Object> emptyList = Collections.emptyList();
+        // emptyList.add(new Object()); // метод .add не доступен для emptyList
+
+// ==============================================================================
+// try - catch
+        try {
+            int number = 10 / 0;            
+        } catch (ArithmeticException e) {
+            System.out.println("На ноль делить нельзя (operation divide by zero not supported)");
+        }
 
     }
 }
