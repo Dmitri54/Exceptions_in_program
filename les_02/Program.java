@@ -5,6 +5,7 @@
 package les_02;
 
 import java.io.File;
+import java.io.FileReader;
 import java.util.Collections;
 import java.util.List;
 
@@ -31,22 +32,30 @@ public class Program {
 
 // ==============================================================================
 // try - catch
-        int number = 1;
-        try {
-            number = 10 / 0;
-            // number = 10 / 1; // Так работает.
+        // int number = 1;
+        // try {
+        //     number = 10 / 0;
+        //     // number = 10 / 1; // Так работает.
             
-            String test = null;
-            // System.out.println(test.length()); // получу исключение - NullPointerException
-            Collections.emptyList().add(new Object());
-        } catch (ArithmeticException e) { // Заменил и приложение перестало падать с ошибкой.
-            System.out.println("На ноль делить нельзя (operation divide by zero not supported)");
-        } catch (NullPointerException e) {
-            System.out.println("nullpointer exeption");
-        } catch (Exception e) {
-            System.out.println("exception");
-        }
-        System.out.println(number);
+        //     String test = null;
+        //     // System.out.println(test.length()); // получу исключение - NullPointerException
+        //     Collections.emptyList().add(new Object());
+        // } catch (ArithmeticException e) { // Заменил и приложение перестало падать с ошибкой.
+        //     System.out.println("На ноль делить нельзя (operation divide by zero not supported)");
+        // } catch (NullPointerException e) {
+        //     System.out.println("nullpointer exeption");
+        // } catch (Exception e) {
+        //     System.out.println("exception");
+        // }
+        // System.out.println(number);
+
+// -----------------------------------------------------------------------------------------
+// Checked - обязательные. Проверяемые.
+// Unchecked - не обязательные исключения. Не проверяемые.
+
+// Checked не дадут скомпилировать код, если обработка этой ошибки не была произведена.
+        FileReader test = new FileReader("test"); // VSC не даст скомпилировать этот код, т.к. ошибка FileNotFoundException  
+
 
     }
 }
