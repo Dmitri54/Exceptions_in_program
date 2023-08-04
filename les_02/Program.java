@@ -33,7 +33,11 @@ public class Program {
 // try - catch
         int number = 1;
         try {
-            number = 10 / 0;            
+            // number = 10 / 0;
+            number = 10 / 1; // Так работает.
+            
+            String test = null;
+            System.out.println(test.length()); // получу исключение - NullPointerException
         } catch (ArithmeticException e) {
             System.out.println("На ноль делить нельзя (operation divide by zero not supported)");
         }
