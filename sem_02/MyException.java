@@ -12,9 +12,9 @@ class MyException extends Exception { // Создал свой класс Иск
     public static class Test {
         public static void main(String[] args) {
             try {
-                throw new MyException("This is my exception");
+                throw new MyException("This is my exception"); // Пробросил MyException сюда
             } catch (MyException e) {
-                System.out.println(e.getMessage());
+                System.out.println(e.getMessage()); // .getMessage() - метод выводит сообщение об ошибки
             }
         }
     }
