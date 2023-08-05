@@ -35,7 +35,8 @@ public class Calculator {
     }
 
     // Определяем собственное исключение внутри класса Calculator
-    public static class InvalidArgumentException extends Exception {
+    // public static class InvalidArgumentException extends Exception { // Так будет Checked
+    public static class InvalidArgumentException extends RuntimeException { // Так Unchecked
         public InvalidArgumentException(String message) {
             super(message);
         }
