@@ -7,7 +7,8 @@ public class Calculator {
 
     private double arg1, arg2;
 
-    public void setArg1(String value) throws InvalidArgumentException {
+    public void setArg1(String value) throws InvalidArgumentException { 
+// throws InvalidArgumentException - явно определяю своё исключение при помощи слова throws или блоком try-catch
         if (isNumeric(value)) {
             arg1 = Double.parseDouble(value);
         } else {
@@ -35,8 +36,8 @@ public class Calculator {
     }
 
     // Определяем собственное исключение внутри класса Calculator
-    // public static class InvalidArgumentException extends Exception { // Так будет Checked
-    public static class InvalidArgumentException extends RuntimeException { // Так Unchecked
+    public static class InvalidArgumentException extends Exception { // Так будет Checked
+    // public static class InvalidArgumentException extends RuntimeException { // Так Unchecked
         public InvalidArgumentException(String message) {
             super(message);
         }
