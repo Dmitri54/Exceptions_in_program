@@ -43,5 +43,17 @@ public class Program {
             System.out.println("catch exceprion: " + e.getClass().getSimpleName()); 
         } 
         System.out.println("Copy successfully");
+
+// ------------------------------------------------------------------------
+// Можно писать с блоком fanally
+// Удобно использовать блок try-finally когда нужно не только ловить исключения, но и выполнять действия, 
+// которые гарантированно должны быть выполнены.
+
+        try {
+            System.out.println("test operation"); // Тут какая-то операция
+        } finally {
+            System.out.println("finally operation"); // и тут какая-то операция
+        }
+
     }
 }
