@@ -23,6 +23,7 @@ class Calculator {
             System.out.println("Результат: " + result);
 // Дополнительная обработка ошибок
         } catch (InvalidInputException e) {
+// В скобках - InvalidInputException e = new InvalidInputException("Недопустимая операция");
             System.out.println(e.getMessage());
         } catch (ArithmeticException e) {
             System.out.println("Ошибка: " + e.getMessage());
