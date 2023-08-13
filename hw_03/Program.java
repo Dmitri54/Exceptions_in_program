@@ -18,50 +18,50 @@ public class Program {
     public static void main(String[] args) throws PaswdEnterIncorrect {
         Scanner scanner = new Scanner(System.in);
 
-        String str = scanner.next();
+        // String str = scanner.next();
         try {
-            PasswordVerifier str = PaswrdVerifier();
-        } catch (Exception e) {
-            // TODO: handle exception
+            String str = scanner.next();
+            System.out.println(PasswordVerifier.);
+            // PasswordVerifier pas = new PasswordVerifier();
+        } catch (PaswdEnterIncorrect e) {
+            e.getMessage();
         }
-        
-        
+        System.out.println("Пароль принят!");
     }
 
-}
+    public class PasswordVerifier {
 
-class PasswordVerifier { 
-    public void PaswrdVerifier(String password) throws PaswdEnterIncorrect {
-        System.out.println("Введите пароль.");
-        if (password.length() < 8) {
-            throw new PaswdEnterIncorrect("Пароль должен быть не менее 8 символов.");
-        }
-
-        boolean conteinsDigit = false;
-        for (int i = 0; i < password.length(); i++) {
-            char ch = password.charAt(i);
-            if (Character.isDigit(ch)) {
-                conteinsDigit = true;
-                break;
+        public void PaswrdVerifier(String password) throws PaswdEnterIncorrect {
+            System.out.println("Введите пароль.");
+            if (password.length() < 8) {
+                throw new PaswdEnterIncorrect("Пароль должен быть не менее 8 символов.");
             }
-        }
-        if (!conteinsDigit) {
-            throw new PaswdEnterIncorrect("Пароль должен содержать хотя бы одну цифру.");
-        }
 
-        boolean containsUppercase = false;
-        for (int j = 0; j < password.length(); j++) {
-            char ch = password.charAt(j);
-            if (Character.isUpperCase(ch)) {
-                containsUppercase = true;
-                break;
+            boolean conteinsDigit = false;
+            for (int i = 0; i < password.length(); i++) {
+                char ch = password.charAt(i);
+                if (Character.isDigit(ch)) {
+                    conteinsDigit = true;
+                    break;
+                }
             }
-        }
+            if (!conteinsDigit) {
+                throw new PaswdEnterIncorrect("Пароль должен содержать хотя бы одну цифру.");
+            }
 
-        if (!containsUppercase) {
-            throw new PaswdEnterIncorrect("Пароль должен содержать хотя бы одну заглавную букву.");
-        }
+            boolean containsUppercase = false;
+            for (int j = 0; j < password.length(); j++) {
+                char ch = password.charAt(j);
+                if (Character.isUpperCase(ch)) {
+                    containsUppercase = true;
+                    break;
+                }
+            }
 
+            if (!containsUppercase) {
+                throw new PaswdEnterIncorrect("Пароль должен содержать хотя бы одну заглавную букву.");
+            } 
+        }
     }
 }
 
