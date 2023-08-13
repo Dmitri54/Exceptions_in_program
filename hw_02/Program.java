@@ -21,8 +21,7 @@ public class Program {
                 try {
                     System.out.println(numcheck(num));
                 } catch (InvalidNumberException e) {
-                    
-                    e.printStackTrace();
+                    System.out.println("Некорректное число");
                 }
 
                 continueInput = false;
