@@ -14,33 +14,29 @@ package hw_03;
 public class PasswordVerifier {
 
     public void PaswrdVerifier(String password) throws Exception {
-        // System.out.println("Введите пароль.");
+        
         if (password.length() < 8) {
             throw new Exception("Пароль должен быть не менее 8 символов.");
         }
 
-        boolean conteinsDigit = true;
+        boolean conteinsDigit = false;
+        boolean containsUppercase = false;
+
         for (int i = 0; i < password.length(); i++) {
-            char ch = password.charAt(i);
+            char ch = password.charAt(i);            
             if (Character.isDigit(ch)) {
-                conteinsDigit = false;
-                break;
+                conteinsDigit = true;                
+            }
+            if (Character.isUpperCase(ch)) {
+                containsUppercase = true;                
             }
         }
-        if (conteinsDigit) {
+
+        if (!conteinsDigit) {
             throw new Exception("Пароль должен содержать хотя бы одну цифру.");
         }
-
-        boolean containsUppercase = true;
-        for (int j = 0; j < password.length(); j++) {
-            char ch = password.charAt(j);
-            if (Character.isUpperCase(ch)) {
-                containsUppercase = false;
-                break;
-            }
-        }
-
-        if (containsUppercase) {
+     
+        if (!containsUppercase) {
             throw new Exception("Пароль должен содержать хотя бы одну заглавную букву.");
         }
     }

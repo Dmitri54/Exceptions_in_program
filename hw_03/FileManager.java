@@ -24,7 +24,11 @@ import java.io.OutputStream;
 
 public class FileManager {
     // Метод чтения файла
-    public void read(String filePath) throws FileNotFoundException {
+
+
+    String filePath = "/Users/User/Desktop/Exceptions_in_program/hw_03/FileForHw_03.java";
+    String fileDestinationPath = "/Users/User/Desktop/Exceptions_in_program/hw_03/Copy_FileForHw_03.java";
+    public void read() throws FileNotFoundException {
         
         File file = new File(filePath);
 
@@ -32,43 +36,31 @@ public class FileManager {
             throw new FileNotFoundException("Фаил для чтения не найден" + filePath);
         }
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("/Users/User/Desktop/Exceptions_in_program/hw_03/FileForHw_03.java"))){
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))){
             String line;
             while ((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
         } catch (IOException e) {
-            e.getMessage();
+            System.out.println(e);
         }
     }
 
     // Метод записи в фаил
-    public void write (String filePath, String content) throws FileNotFoundException {
-        File file = new File(filePath);
-
-        if(!file.exists()){
-            throw new FileNotFoundException("Фаил для записи не найден: " + filePath);
-        }
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("/Users/User/Desktop/Exceptions_in_program/hw_03/FileForHw_03.java"))){
+    public void write (String content) throws FileNotFoundException {
+               
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))){
             writer.write(content);
         } catch (IOException e) {
-            e.getMessage();
+            System.out.println(e);
         }
     }
 
     // Метод копирования файла
-    public void copy (String sourcePath, String destinationPath) throws FileNotFoundException {
-        File sourcFile = new File(sourcePath);
-
-        if (! sourcFile.exists()) {
-            throw new FileNotFoundException("Фаил для копирования не найден: " + sourcePath);
-        }
-
-        File destinationFile = new File(destinationPath);
-
-        try (InputStream input = new FileInputStream(sourcePath); 
-            OutputStream output = new FileOutputStream(destinationPath)){
+    public void copy () throws FileNotFoundException {      
+        
+        try (InputStream input = new FileInputStream(filePath); 
+            OutputStream output = new FileOutputStream(fileDestinationPath)){
             
                 byte[] buffer = new byte[1024];
                 int bytesRead;
@@ -77,7 +69,7 @@ public class FileManager {
                     output.write(buffer, 0 , bytesRead);
                 }
         } catch (IOException e) {
-            e.getMessage();
+            System.out.println(e);
         }
     }
 }
